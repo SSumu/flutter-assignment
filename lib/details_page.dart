@@ -5,7 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class DetailsPage extends StatelessWidget {
   final Product product;
 
-  const DetailsPage({required this.product});
+  const DetailsPage({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class DetailsPage extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               'Price: \$${product.price.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Text('Ratings:${product.rating}'),

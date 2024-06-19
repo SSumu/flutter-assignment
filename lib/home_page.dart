@@ -1,13 +1,19 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/product_model.dart';
 import 'package:flutter_assignment/api_service.dart';
 import 'package:flutter_assignment/details_page.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final String title;
+
+  const HomePage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
+    if (kDebugMode) {
+      print('Building HomePage');
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('Products'),
@@ -15,6 +21,9 @@ class HomePage extends StatelessWidget {
       body: FutureBuilder<List<Product>>(
         future: ApiService.fetchProducts(),
         builder: (context, snapshot) {
+          if (kDebugMode) {
+            print('FutureBuilder state: ${snapshot.connectionState}');
+          }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
