@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Products'),
+        title: const Center(child: Text('Products')),
       ),
       body: FutureBuilder<List<Product>>(
         future: ApiService.fetchProducts(),

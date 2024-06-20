@@ -21,14 +21,16 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'],
-      title: json['title'],
+      id: json['id'] ?? 0,
+      title: json['title'] ?? 'No title',
       thumbnail: json['thumbnail'] ?? 'https://via.placeholder.com/150',
-      price: json['price'].toDouble(),
-      brand: json['brand'],
-      images: List<String>.from(json['images']),
-      rating: json['rating'].toDouble(),
-      description: json['description'],
+      price: (json['price'] ?? 0).toDouble(),
+      brand: json['brand'] ?? 'Unknown',
+      images: (json['images'] != null)
+          ? List<String>.from(json['images'])
+          : ['https://via.placeholder.com/150'],
+      rating: (json['rating'] ?? 0).toDouble(),
+      description: json['description'] ?? 'No description availabel',
     );
   }
 }
