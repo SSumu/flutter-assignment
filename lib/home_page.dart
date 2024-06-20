@@ -16,7 +16,12 @@ class HomePage extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Products')),
+        title: const Center(
+          child: Text(
+            'Products',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
       body: FutureBuilder<List<Product>>(
         future: ApiService.fetchProducts(),
