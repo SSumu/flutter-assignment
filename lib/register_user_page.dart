@@ -27,19 +27,22 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
       return;
     }
 
+    void navigateToAuthPage() {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const AuthPage()),
+      );
+    }
+
     try {
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
+      await _auth.createUserWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
       setState(() {
         _errorMessage = 'Registration successful';
       });
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const AuthPage()),
-      );
+      navigateToAuthPage();
     } on FirebaseAuthException catch (e) {
       setState(() {
         _errorMessage = e.message!;

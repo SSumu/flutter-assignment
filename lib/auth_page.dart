@@ -18,7 +18,7 @@ class AuthPageState extends State<AuthPage> {
 
   Future<void> _login() async {
     try {
-      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+      await _auth.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
@@ -39,7 +39,7 @@ class AuthPageState extends State<AuthPage> {
   void _navigateToRegister() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => RegisterUserPage()),
+      MaterialPageRoute(builder: (context) => const RegisterUserPage()),
     );
   }
 
