@@ -11,11 +11,22 @@ class RegisterUserPage extends StatefulWidget {
 
 class _RegisterUserPageState extends State<RegisterUserPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   String _errorMessage = '';
 
   Future<void> _register() async {
+    if (_passwordController.text.trim() !=
+        _confirmPasswordController.text.trim()) {
+      setState(() {
+        _errorMessage = 'Password does not match';
+      });
+      return;
+    }
+
     try {
       UserCredential userCredential =
           await _auth.createUserWithEmailAndPassword(
@@ -54,12 +65,21 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
         child: Column(
           children: [
             TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(labelText: 'Name'),
+            ),
+            TextField(
               controller: _emailController,
               decoration: const InputDecoration(labelText: 'Email'),
             ),
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(labelText: 'Password'),
+              obscureText: true,
+            ),
+            TextField(
+              controller: _confirmPasswordController,
+              decoration: const InputDecoration(labelText: 'Confirm Password'),
               obscureText: true,
             ),
             const SizedBox(
