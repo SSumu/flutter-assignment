@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'home_page.dart';
+import 'register_user_page.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -14,23 +15,6 @@ class AuthPageState extends State<AuthPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String _errorMessage = '';
-
-  Future<void> _register() async {
-    try {
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
-      );
-      setState(() {
-        _errorMessage = 'Registration successful';
-      });
-    } on FirebaseAuthException catch (e) {
-      setState(() {
-        _errorMessage = e.message!;
-      });
-    }
-  }
 
   Future<void> _login() async {
     try {
@@ -52,11 +36,25 @@ class AuthPageState extends State<AuthPage> {
     }
   }
 
+  void _navigateToRegister() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => RegisterUserPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Authentication'),
+        title: const Text(
+          'Authentication',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -79,7 +77,7 @@ class AuthPageState extends State<AuthPage> {
               child: const Text('Login'),
             ),
             ElevatedButton(
-              onPressed: _register,
+              onPressed: _navigateToRegister,
               child: const Text('Register'),
             ),
             if (_errorMessage.isNotEmpty) ...[
