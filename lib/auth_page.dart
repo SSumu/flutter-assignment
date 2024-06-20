@@ -56,6 +56,7 @@ class AuthPageState extends State<AuthPage> {
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: Colors.amber,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

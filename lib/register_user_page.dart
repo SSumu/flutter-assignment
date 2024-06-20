@@ -63,6 +63,7 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: Colors.amber,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
