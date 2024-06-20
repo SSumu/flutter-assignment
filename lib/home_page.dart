@@ -1,13 +1,24 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/auth_page.dart';
 import 'package:flutter_assignment/product_model.dart';
 import 'package:flutter_assignment/api_service.dart';
 import 'package:flutter_assignment/details_page.dart';
 
 class HomePage extends StatelessWidget {
-  final String title;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  const HomePage({super.key, required this.title});
+  Future<void> _signOut(BuildContext context) async {
+    await _auth.signOut();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const AuthPage(),
+      ),
+    );
+  }
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +27,17 @@ class HomePage extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Products',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+        title: const Text(
+          'Products',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () => _signOut(context),
+            icon: const Icon(Icons.logout),
+          ),
+        ],
       ),
       body: FutureBuilder<List<Product>>(
         future: ApiService.fetchProducts(),

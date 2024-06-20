@@ -8,7 +8,7 @@ import 'package:flutter/foundation.dart'
 ///
 /// Example:
 /// ```dart
-// / import 'firebase_options.dart';
+/// import 'firebase_options.dart';
 /// // ...
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
@@ -41,52 +41,53 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBMI-Nz_wYdqqR7uq0i65J5YRYLL5adCY4',
-    appId: '1:12457094783:web:02b4ffab5a2ab77aa1194a',
-    messagingSenderId: '12457094783',
-    projectId: 'flutter-assignment-61b40',
-    authDomain: 'flutter-assignment-61b40.firebaseapp.com',
-    storageBucket: 'flutter-assignment-61b40.appspot.com',
-    measurementId: 'G-KV13YK9S2B',
+    apiKey: 'AIzaSyBaYEfp7w1Lvcf0kuHeQu-PfT6VdetLffw',
+    appId: '1:1038702303938:web:2788636c3af4eb2592795b',
+    messagingSenderId: '1038702303938',
+    projectId: 'flutter-assignment-2cd78',
+    authDomain: 'flutter-assignment-2cd78.firebaseapp.com',
+    databaseURL: 'https://flutter-assignment-2cd78-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'flutter-assignment-2cd78.appspot.com',
+    measurementId: 'G-YCPDLM2GXX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDKKvUS7gAyWxTIdVR3cKywY9jwKtI6uKg',
-    appId: '1:12457094783:android:f5dc2b4a5e9a641da1194a',
-    messagingSenderId: '12457094783',
-    projectId: 'flutter-assignment-61b40',
-    storageBucket: 'flutter-assignment-61b40.appspot.com',
+    apiKey: 'AIzaSyBBzJkJnE1rRr1btvo-LE_KeHdB98aL3zE',
+    appId: '1:1038702303938:android:55c440b5528af6e192795b',
+    messagingSenderId: '1038702303938',
+    projectId: 'flutter-assignment-2cd78',
+    databaseURL: 'https://flutter-assignment-2cd78-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'flutter-assignment-2cd78.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC3UhIXCssvpJJfZUh1QXPXdzOSDOmrfHA',
-    appId: '1:12457094783:ios:aeded09225508766a1194a',
-    messagingSenderId: '12457094783',
-    projectId: 'flutter-assignment-61b40',
-    storageBucket: 'flutter-assignment-61b40.appspot.com',
-    iosClientId:
-        '12457094783-7us38lqd0ookrhqeebcu0j2cts7ubhco.apps.googleusercontent.com',
+    apiKey: 'AIzaSyD3faZffLoG4cvA83jtQ-krH5N3V1RZmsE',
+    appId: '1:1038702303938:ios:383386e50509eff792795b',
+    messagingSenderId: '1038702303938',
+    projectId: 'flutter-assignment-2cd78',
+    databaseURL: 'https://flutter-assignment-2cd78-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'flutter-assignment-2cd78.appspot.com',
     iosBundleId: 'com.example.flutterAssignment',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC3UhIXCssvpJJfZUh1QXPXdzOSDOmrfHA',
-    appId: '1:12457094783:ios:aeded09225508766a1194a',
-    messagingSenderId: '12457094783',
-    projectId: 'flutter-assignment-61b40',
-    storageBucket: 'flutter-assignment-61b40.appspot.com',
-    iosClientId:
-        '12457094783-7us38lqd0ookrhqeebcu0j2cts7ubhco.apps.googleusercontent.com',
+    apiKey: 'AIzaSyD3faZffLoG4cvA83jtQ-krH5N3V1RZmsE',
+    appId: '1:1038702303938:ios:383386e50509eff792795b',
+    messagingSenderId: '1038702303938',
+    projectId: 'flutter-assignment-2cd78',
+    databaseURL: 'https://flutter-assignment-2cd78-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'flutter-assignment-2cd78.appspot.com',
     iosBundleId: 'com.example.flutterAssignment',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBMI-Nz_wYdqqR7uq0i65J5YRYLL5adCY4',
-    appId: '1:12457094783:web:251a4987f0e2e7d2a1194a',
-    messagingSenderId: '12457094783',
-    projectId: 'flutter-assignment-61b40',
-    authDomain: 'flutter-assignment-61b40.firebaseapp.com',
-    storageBucket: 'flutter-assignment-61b40.appspot.com',
-    measurementId: 'G-077C7L0D4Y',
+    apiKey: 'AIzaSyBaYEfp7w1Lvcf0kuHeQu-PfT6VdetLffw',
+    appId: '1:1038702303938:web:7f36b7229910529092795b',
+    messagingSenderId: '1038702303938',
+    projectId: 'flutter-assignment-2cd78',
+    authDomain: 'flutter-assignment-2cd78.firebaseapp.com',
+    databaseURL: 'https://flutter-assignment-2cd78-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'flutter-assignment-2cd78.appspot.com',
+    measurementId: 'G-564B5PPD7T',
   );
 }
